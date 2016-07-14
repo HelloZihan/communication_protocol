@@ -1,0 +1,8 @@
+CREATE TABLE `procotol_standard` (
+  `id` varchar(10) NOT NULL COMMENT '主键，查询时使用',
+  `byteSet` varchar(40) NOT NULL COMMENT '字节命令集合',
+  `descriptionSet` varchar(100) NOT NULL COMMENT '字节描述集合',
+  `remarks` varchar(40) DEFAULT NULL COMMENT '命令备注',
+  `sequence` varchar(10) NOT NULL COMMENT '排序',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
