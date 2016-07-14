@@ -18,7 +18,7 @@ public class SystemController {
 	public String sayHello(ModelMap modelMap){
 		System.out.print("-------------------");
 		systemService.queryProtocol();
-		modelMap.put("sayHello", "hello world");
+	
 		return "/hello";
 	}
 	
