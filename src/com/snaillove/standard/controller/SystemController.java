@@ -17,15 +17,18 @@ import com.snaillove.standard.service.SystemService;
 @Controller
 public class SystemController {
 	private SystemService systemService;
-	@RequestMapping(value="/hello")
-	public String sayHello(){
+	@RequestMapping(value="/index")
+	public String index(){
 		System.out.print("-------------------");
-		List<Protocol> list = systemService.queryProtocol();
-		System.out.println(systemService.queryProtocol());
-		
-		return "/hello";
+		return "/index";
 	}
-	
+	@RequestMapping(value="/query")
+	public String query(){
+		System.out.print("-------------------++++++++++++++");
+		List<Protocol> list = systemService.queryProtocol();
+		System.out.println(systemService.queryProtocol());		
+		return "/index";
+	}
 	public SystemService getSystemService() {
 		return systemService;
 	}
