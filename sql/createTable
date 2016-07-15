@@ -4,5 +4,8 @@ CREATE TABLE `procotol_standard` (
   `descriptionSet` varchar(100) NOT NULL COMMENT '字节描述集合',
   `remarks` varchar(40) DEFAULT NULL COMMENT '命令备注',
   `sequence` varchar(10) NOT NULL COMMENT '排序',
+  `name` char(2) NOT NULL COMMENT '0:测试 ~ 12:蓝牙通信',
+  `correlation` char(1) NOT NULL COMMENT '相关性',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+

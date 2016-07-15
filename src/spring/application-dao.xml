@@ -13,5 +13,5 @@
          http://www.springframework.org/schema/aop 
          http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<context:annotation-config></context:annotation-config>
-	<bean id="userDao" class="com.zhaojun.ssh.daoImpl.UserDaoImpl"/>	
+	<bean id="systemDao" class=" com.snaillove.standard.dao.SystemDao"/>	
 </beans>

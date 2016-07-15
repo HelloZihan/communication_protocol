@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace=" com.snaillove.standard.dao.SystemDao">
-
- 	<resultMap id="resultListStudent" type="Student">
-		<id column="id" property="id" />
-		<result column="name" property="name" />
-		<result column="age" property="age" />
+<mapper namespace="com.snaillove.standard.dao.SystemDao">
+	<!-- application-mybatis配置了别名 -->
+ 	<resultMap id="resultListProtocol" type="Protocol">
+		<result column="byteSet" property="byteSet" />
+		<result column="descriptionSet" property="descriptionSet" />
+		<result column="remarks" property="remarks" />
+		<result column="sequence" property="sequence" />
+		<result column="correlation" property="correlation" />
 	</resultMap>
-	<select id="selectStudent" resultMap="resultListStudent">
-		select * from student
+	<!-- sql语句结尾不能有分号 -->
+	<select id="queryProtocol" resultMap="resultListProtocol">
+		select byteSet, descriptionSet, remarks, sequence, correlation from procotol_standard
 	</select>
 </mapper>

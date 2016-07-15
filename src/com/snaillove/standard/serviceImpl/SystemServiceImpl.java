@@ -14,12 +14,13 @@ public class SystemServiceImpl implements SystemService {
 	@Override
 	public List<Protocol> queryProtocol() {
 		//查询逻辑
-		return null;
+		return systemDao.queryProtocol();
 	}
-	@Resource(name = "systemDao")
+	
 	public SystemDao getSystemDao() {
 		return systemDao;
 	}
+	@Resource(name = "systemDao")
 	public void setSystemDao(SystemDao systemDao) {
 		this.systemDao = systemDao;
 	}

@@ -15,10 +15,9 @@ import com.snaillove.standard.service.SystemService;
 public class SystemController {
 	private SystemService systemService;
 	@RequestMapping(value="/hello")
-	public String sayHello(ModelMap modelMap){
+	public String sayHello(){
 		System.out.print("-------------------");
-		systemService.queryProtocol();
-	
+		System.out.println(systemService.queryProtocol());
 		return "/hello";
 	}
 	

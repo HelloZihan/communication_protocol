@@ -12,6 +12,12 @@
     	 http://www.springframework.org/schema/tx/spring-tx.xsd
          http://www.springframework.org/schema/aop 
          http://www.springframework.org/schema/aop/spring-aop.xsd" default-autowire="byName">
+    <context:annotation-config />
+	<!-- org.springframework.stereotype.Controller不由spring进行管理 -->
+	<context:component-scan base-package="com.snaillove.standard">
+	<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
 	
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
   		<property name="locations" value="classpath:jdbc.properties"/>
@@ -26,12 +32,12 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
      	<property name="dataSource" ref="dataSource"/> 
      	<property name="mapperLocations" value="classpath:com/snaillove/standard/model/*.xml"/>
-     	<property name="typeAliasesPackage" value=" com.snaillove.standard.model.Protocol"/>
+     	<property name="typeAliasesPackage" value="com.snaillove.standard.model"/>
 	</bean>
 	
 	<bean id="systemDao" class="org.mybatis.spring.mapper.MapperFactoryBean"> 
 		<!--mapperInterface属性指定映射器接口，用于实现此接口并生成映射器对象--> 
-    	<property name="mapperInterface" value=" com.snaillove.standard.dao.SystemDao" /> 
+    	<property name="mapperInterface" value="com.snaillove.standard.dao.SystemDao" /> 
     	<!--sqlSessionFactory属性指定要用到的SqlSessionFactory实例--> 
     	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
   	</bean> 
